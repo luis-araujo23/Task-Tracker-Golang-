@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "description": "Comprar pan y cafe",
+    "status": "in-progress",
+    "createdById": 0,
+    "createdBy": "",
+    "createdAt": "2026-03-25T15:52:14-04:00",
+    "updatedAt": "2026-03-25T15:52:45-04:00"
+  },
+  {
+    "id": 2,
+    "description": "mostrar esta tarea a la profe",
+    "status": "todo",
+    "createdById": 0,
+    "createdBy": "",
+    "createdAt": "2026-03-26T11:03:35-04:00",
+    "updatedAt": "2026-03-26T11:03:35-04:00"
+  },
+  {
+    "id": 3,
+    "description": "venir a la universidad",
+    "status": "todo",
+    "createdById": 0,
+    "createdBy": "",
+    "createdAt": "2026-03-26T17:34:21-04:00",
+    "updatedAt": "2026-03-26T17:34:21-04:00"
+  },
+  {
+    "id": 4,
+    "description": "prueba de luis",
+    "status": "todo",
+    "createdById": 1,
+    "createdBy": "luis",
+    "createdAt": "2026-03-26T20:51:22-04:00",
+    "updatedAt": "2026-03-26T20:51:22-04:00"
+  }
+]

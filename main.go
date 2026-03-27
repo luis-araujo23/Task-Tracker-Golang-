@@ -6,6 +6,7 @@ import (
 	"os"
 	"strings"
 	"task-tracker/tracker"
+	"time"
 )
 
 const jsonFileName = "tasks.json"
@@ -173,7 +174,7 @@ func printTasks(tasks []tracker.Task) {
 		if strings.TrimSpace(creator) == "" {
 			creator = "N/A"
 		}
-		fmt.Printf("%-2d | %-11s | %-14s | %-22s | %-25s | %-25s\n", t.ID, t.Status, truncate(creator, 14), truncate(t.Description, 22), t.CreatedAt, t.UpdatedAt)
+		fmt.Printf("%-2d | %-11s | %-14s | %-22s | %-25s | %-25s\n", t.ID, t.Status, truncate(creator, 14), truncate(t.Description, 22), formatTimestamp(t.CreatedAt), formatTimestamp(t.UpdatedAt))
 	}
 }
 
@@ -187,8 +188,17 @@ func printUsers(users []tracker.User) {
 	fmt.Println("ID | NAME                 | CREATED AT")
 	fmt.Println("---+----------------------+---------------------------")
 	for _, u := range users {
-		fmt.Printf("%-2d | %-20s | %-25s\n", u.ID, truncate(u.Name, 20), u.CreatedAt)
+		fmt.Printf("%-2d | %-20s | %-25s\n", u.ID, truncate(u.Name, 20), formatTimestamp(u.CreatedAt))
 	}
+}
+
+func formatTimestamp(value string) string {
+	parsed, err := time.Parse(time.RFC3339, value)
+	if err != nil {
+		return value
+	}
+
+	return parsed.Format("2006-01-02 15:04:05")
 }
 
 // Recorta texto largo para mantener columnas legibles.
